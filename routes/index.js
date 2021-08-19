@@ -6,14 +6,19 @@ var router = express.Router();
  * Needed for MongoDB Connection
  */
 var mongoUtil = require( './mongoUtils' );
+console.log("ENV URI:", process.env.URI);
+console.log("ENV DATABASENAME:", process.env.DATABASENAME);
+console.log("ENV COLLECTION:", process.env.COLLECTION);
 if (process.env.URI) {
   mongoUtil.setUri(process.env.URI);
 } else {
+  console.log("Using default URI");
   mongoUtil.setUri("mongodb+srv://sstokes:Passw0rd@basedemo.zwtlz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 }
 if (process.env.DATABASENAME) {
   mongoUtil.setDbName(process.env.DATABASENAME);
 } else {
+  console.log("Using default DATABASENAME");
   mongoUtil.setDbName("sample_mflix");
 }
 
