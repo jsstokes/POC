@@ -1,4 +1,5 @@
 var express = require('express');
+const { ObjectId } = require('mongodb');
 var router = express.Router();
 
 /*
@@ -21,12 +22,20 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET a document. */
-router.get('/getOne', async(req, res, next) => {
+router.get('/getOne/:id?', async(req, res, next) => {
   // res.render('index', { title: 'Express' });
   // res.send({"got":"Document"});
+  var id = req.params.id;
+  var query = {}
+  if (id) {
+    console.log("ID:", id);
+    query._id = new ObjectId(id)
+  } else {
+    console.log("NO PARAMETER");
+  }
   var db = mongoUtil.getDb()
   console.time("Calling One");
-  var doc = await db.collection("movies").findOne({});
+  var doc = await db.collection("movies").findOne(query);
   console.timeEnd("Calling One");
   res.send(doc);
 });
