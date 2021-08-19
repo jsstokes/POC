@@ -6,8 +6,16 @@ var router = express.Router();
  * Needed for MongoDB Connection
  */
 var mongoUtil = require( './mongoUtils' );
-mongoUtil.setUri("mongodb+srv://sstokes:Passw0rd@basedemo.zwtlz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-mongoUtil.setDbName("sample_mflix");
+if (process.env.URI) {
+  mongoUtil.setUri(process.env.URI);
+} else {
+  mongoUtil.setUri("mongodb+srv://sstokes:Passw0rd@basedemo.zwtlz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+}
+if (process.env.DATABASENAME) {
+  mongoUtil.setDbName(process.env.DATABASENAME);
+} else {
+  mongoUtil.setDbName("sample_mflix");
+}
 console.log("MongoDB Connecting to:", mongoUtil.getUri(), " using database:", mongoUtil.getDbName());
 
 mongoUtil.connectToServer( function( err, client ) {
