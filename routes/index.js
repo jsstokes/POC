@@ -2,15 +2,17 @@ var express = require('express');
 var router = express.Router();
 
 /*
- * VAriables needed for MongoDB
- *
+ * Needed for MongoDB Connection
  */
 var mongoUtil = require( './mongoUtils' );
+mongoUtil.setUri("mongodb+srv://sstokes:Passw0rd@basedemo.zwtlz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+mongoUtil.setDbName("sample_mflix");
+console.log("MongoDB Connecting to:", mongoUtil.getUri(), " using database:", mongoUtil.getDbName());
 
 mongoUtil.connectToServer( function( err, client ) {
   if (err) console.log(err);
   // start the rest of your app here
-} );
+} ); 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,7 +28,6 @@ router.get('/getOne', async(req, res, next) => {
   console.time("Calling One");
   var doc = await db.collection("movies").findOne({});
   console.timeEnd("Calling One");
-  console.log("Doc is:", doc);
   res.send(doc);
 });
 
