@@ -16,8 +16,11 @@ if (process.env.DATABASENAME) {
 } else {
   mongoUtil.setDbName("sample_mflix");
 }
-console.log("MongoDB Connecting to:", mongoUtil.getUri(), " using database:", mongoUtil.getDbName());
 
+var collectionName = process.env.COLLECTION || "testdata";
+
+console.log("MongoDB Connecting to:", mongoUtil.getUri(), " using database:", mongoUtil.getDbName());
+console.log("Collection Name:", collectionName);
 mongoUtil.connectToServer( function( err, client ) {
   if (err) console.log(err);
   // start the rest of your app here
@@ -43,7 +46,7 @@ router.get('/getOne/:id?', async(req, res, next) => {
   }
   var db = mongoUtil.getDb()
   console.time("Calling One");
-  var doc = await db.collection("movies").findOne(query);
+  var doc = await db.collection(collectionName).findOne(query);
   console.timeEnd("Calling One");
   res.send(doc);
 });
