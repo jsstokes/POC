@@ -6,7 +6,7 @@ var router = express.Router();
  * Needed for MongoDB Connection
  */
 var mongoUtil = require( './mongoUtils' );
-console.log("ENV URI:", process.env.URI);
+console.log("ENV URI:", process.env.URI); 
 console.log("ENV DATABASENAME:", process.env.DATABASENAME);
 console.log("ENV COLLECTION:", process.env.COLLECTION);
 if (process.env.URI) {
@@ -52,6 +52,39 @@ router.get('/getOne/:id?', async(req, res, next) => {
   var db = mongoUtil.getDb()
   console.time("Calling One");
   var doc = await db.collection(collectionName).findOne(query);
+  console.timeEnd("Calling One");
+  res.send(doc);
+});
+
+
+router.get('/randomIds', async(req, res, next) => {
+  // res.render('index', { title: 'Express' });
+  // res.send({"got":"Document"});
+  var id = req.params.id;
+  var query = [
+    {
+      '$sample': {
+        'size': 3
+      }
+    }, {
+      '$project': {
+        '_id': 1
+      }
+    }
+  ]
+  // [
+  //   {"$sample": {size: 5}},
+  //   {"$project": {"_id": 1}}
+  // ]
+  if (id) {
+    console.log("ID:", id);
+    query._id = new ObjectId(id)
+  } else {
+    console.log("NO PARAMETER");
+  }
+  var db = mongoUtil.getDb()
+  console.time("Calling One");
+  var doc = await db.collection(collectionName).aggregate(query).toArray();
   console.timeEnd("Calling One");
   res.send(doc);
 });
