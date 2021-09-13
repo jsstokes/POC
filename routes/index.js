@@ -89,6 +89,36 @@ router.get('/randomIds', async(req, res, next) => {
   res.send(doc);
 });
 
+/* GET a document. */
+router.get('/getMany', async(req, res, next) => {
+  // res.render('index', { title: 'Express' });
+  // res.send({"got":"Document"});
+  // var id = req.params.ids;
+  console.log("IDs from Request Query:", req.query.ids);
+  var count = 1;
+  var id_array = JSON.parse(req.query.ids.replace(/\'/g,"\""));
+  console.log("id_array object is:", id_array);
+  var idlist = []
+  id_array.forEach( id => {
+    console.log("ID[", count, "]:", id);
+    count = count  + 1;
+    idlist.push(new ObjectId(id));
+  });
+  var query = {
+    "_id": {"$in": idlist}
+  }
+  // if (id) {
+  //   console.log("ID:", id);
+  //   query._id = new ObjectId(id)
+  // } else {
+  //   console.log("NO PARAMETER");
+  // }
+  var db = mongoUtil.getDb()
+  console.time("Calling getMany");
+  var docs = await db.collection(collectionName).find(query).toArray();
+  // console.timeEnd("Calling One");
+  res.send(docs);
+});
 
 
 module.exports = router;
