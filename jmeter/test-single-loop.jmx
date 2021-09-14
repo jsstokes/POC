@@ -31,7 +31,7 @@
         </WhileController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-            <stringProp name="filename">/Users/sstokes/projects/acxiom-poc/id-list.csv</stringProp>
+            <stringProp name="filename">${__P(env.TESTDATA)}</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames">my_id</stringProp>
             <boolProp name="ignoreFirstLine">true</boolProp>

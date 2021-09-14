@@ -3,6 +3,7 @@ import random
 import sys
 import json
 import getopt
+import os
 
 #
 # Pring out
@@ -78,7 +79,11 @@ else:
 
 
 outfile = open(filename, "w")
-client = MongoClient()
+URI         = os.getenv('URI',default='mongodb://127.0.0.1:27017')
+DATABASE    = os.getenv('DATABASE',default='acxiom')
+COLLECTION  = os.getenv('COLLECTION',default='testdata')
+print("URI:", URI, "DATABASE:", DATABASE,"COLLECTION:",COLLECTION)
+client = MongoClient(URI)
 for entry in range(0,entriesToGenerate):
   # Update count on the screen
   print("Writing",entry+1,"of",entriesToGenerate,end='\r') 
@@ -99,7 +104,8 @@ for entry in range(0,entriesToGenerate):
   # Loop through the results and build an array of strings
   # with the _id values
   #
-  for doc in client.acxiom.testdata.aggregate(query):
+  coll = client[DATABASE][COLLECTION]
+  for doc in coll.aggregate(query):
     results.append(doc)
     if len(resultString) > 2:
       resultString += ","

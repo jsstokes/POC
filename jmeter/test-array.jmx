@@ -70,7 +70,7 @@
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Read list of arrays of ids to retrieve" enabled="true">
             <stringProp name="delimiter">\t</stringProp>
             <stringProp name="fileEncoding"></stringProp>
-            <stringProp name="filename">/Users/sstokes/projects/acxiom-poc/code/poc-api/jmeter/array-of-ids.csv</stringProp>
+            <stringProp name="filename">${__P(env.TESTDATA)}</stringProp>
             <boolProp name="ignoreFirstLine">false</boolProp>
             <boolProp name="quotedData">true</boolProp>
             <boolProp name="recycle">false</boolProp>

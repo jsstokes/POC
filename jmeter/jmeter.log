@@ -1,0 +1,71 @@
+2021-09-14 10:26:03,670 INFO o.a.j.u.JMeterUtils: Setting Locale to en_US
+2021-09-14 10:26:03,689 INFO o.a.j.JMeter: Loading user properties from: /Users/sstokes/projects/acxiom-poc/apache-jmeter-5.4.1/bin/user.properties
+2021-09-14 10:26:03,689 INFO o.a.j.JMeter: Loading system properties from: /Users/sstokes/projects/acxiom-poc/apache-jmeter-5.4.1/bin/system.properties
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: Version 5.4.1
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: java.version=1.8.0_292
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: os.name=Mac OS X
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: os.arch=x86_64
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: os.version=10.15.7
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: file.encoding=UTF-8
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: java.awt.headless=true
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: Max memory     =3817865216
+2021-09-14 10:26:03,698 INFO o.a.j.JMeter: Available Processors =12
+2021-09-14 10:26:03,704 INFO o.a.j.JMeter: Default Locale=English (United States)
+2021-09-14 10:26:03,704 INFO o.a.j.JMeter: JMeter  Locale=English (United States)
+2021-09-14 10:26:03,704 INFO o.a.j.JMeter: JMeterHome=/Users/sstokes/projects/acxiom-poc/apache-jmeter-5.4.1
+2021-09-14 10:26:03,704 INFO o.a.j.JMeter: user.dir  =/Users/sstokes/projects/acxiom-poc/code/poc-api/jmeter
+2021-09-14 10:26:03,704 INFO o.a.j.JMeter: PWD       =/Users/sstokes/projects/acxiom-poc/code/poc-api/jmeter
+2021-09-14 10:26:03,725 INFO o.a.j.JMeter: IP: 192.168.177.140 Name: M-C02F6F7QMD6M.home FullName: m-c02f6f7qmd6m.lan
+2021-09-14 10:26:03,737 INFO o.a.j.s.FileServer: Default base='/Users/sstokes/projects/acxiom-poc/code/poc-api/jmeter'
+2021-09-14 10:26:03,738 INFO o.a.j.s.FileServer: Set new base='/Users/sstokes/projects/acxiom-poc/code/poc-api/jmeter'
+2021-09-14 10:26:03,863 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2021-09-14 10:26:03,881 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2021-09-14 10:26:03,886 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2021-09-14 10:26:03,891 INFO o.a.j.s.SaveService: Loading file: test-single-loop.jmx
+2021-09-14 10:26:03,936 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-09-14 10:26:03,936 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-09-14 10:26:03,936 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-09-14 10:26:03,936 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-09-14 10:26:03,937 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2021-09-14 10:26:03,937 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2021-09-14 10:26:03,959 INFO o.a.j.JMeter: Creating summariser <summary>
+2021-09-14 10:26:03,963 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2021-09-14 10:26:03,963 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-09-14 10:26:03,963 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-09-14 10:26:03,967 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2021-09-14 10:26:03,967 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2021-09-14 10:26:04,222 INFO o.a.j.JMeter: Running test (1631633164222)
+2021-09-14 10:26:04,263 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2021-09-14 10:26:04,263 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2021-09-14 10:26:04,263 INFO o.a.j.e.StandardJMeterEngine: Thread will start next loop on error
+2021-09-14 10:26:04,263 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2021-09-14 10:26:04,267 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2021-09-14 10:26:04,267 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2021-09-14 10:26:04,309 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2021-09-14 10:26:04,310 INFO o.a.j.s.FileServer: Stored: 1
+2021-09-14 10:26:04,310 ERROR o.a.j.t.JMeterThread: Test failed!
+java.lang.IllegalArgumentException: Could not read file header line for file 1
+	at org.apache.jmeter.services.FileServer.reserveFile(FileServer.java:283) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.config.CSVDataSet.initVars(CSVDataSet.java:216) ~[ApacheJMeter_components.jar:5.4.1]
+	at org.apache.jmeter.config.CSVDataSet.iterationStart(CSVDataSet.java:171) ~[ApacheJMeter_components.jar:5.4.1]
+	at org.apache.jmeter.control.GenericController.fireIterationStart(GenericController.java:399) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.control.GenericController.fireIterEvents(GenericController.java:391) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.control.GenericController.next(GenericController.java:160) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.control.WhileController.next(WhileController.java:117) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.control.GenericController.nextIsAController(GenericController.java:222) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.control.GenericController.next(GenericController.java:175) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.control.LoopController.next(LoopController.java:134) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.threads.AbstractThreadGroup.next(AbstractThreadGroup.java:91) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:254) [ApacheJMeter_core.jar:5.4.1]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_292]
+Caused by: java.lang.IllegalArgumentException: File 1 must exist and be readable
+	at org.apache.jmeter.services.FileServer.createBufferedReader(FileServer.java:424) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.services.FileServer.readLine(FileServer.java:340) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.services.FileServer.readLine(FileServer.java:324) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.services.FileServer.reserveFile(FileServer.java:272) ~[ApacheJMeter_core.jar:5.4.1]
+	... 12 more
+2021-09-14 10:26:04,315 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2021-09-14 10:26:04,317 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2021-09-14 10:26:04,318 INFO o.a.j.r.Summariser: summary =      0 in 00:00:00 = ******/s Avg:     0 Min: 9223372036854775807 Max: -9223372036854775808 Err:     0 (0.00%)
